@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Md Sahil Raza — High-Score Resume</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      /* dark background */
+      --panel: #11162a;
+      /* card background */
+      --ink: #e5e7eb;
+      /* primary text */
+      --muted: #9aa4b2;
+      /* secondary text */
+      --line: #20263c;
+      /* borders */
+      --accent: #7c3aed;
+      /* purple */
+      --accent-2: #22d3ee;
+      /* cyan */
+      --chip: rgb(26, 34, 61);
+      /* skill chip bg */
+      --good: #16a34a;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7f8fb;
+        --panel: #ffffff;
+        --ink: #0f172a;
+        --muted: #4b5563;
+        --line: #e5e7eb;
+        --chip: #f2f4f8;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      background: radial-gradient(1200px 1200px at 10% -10%, rgba(124, 58, 237, .15), transparent 40%),
+        radial-gradient(1200px 1200px at 110% 10%, rgba(34, 211, 238, .12), transparent 40%),
+        var(--bg);
+      color: var(--ink);
+      font: 400 16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 1000px;
+      margin: 32px auto;
+      padding: 24px;
+    }
+
+    .header {
+      background: linear-gradient(120deg, rgba(124, 58, 237, .22), rgba(34, 211, 238, .22));
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .name {
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: .3px;
+    }
+
+    .role {
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      appearance: none;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--ink);
+      padding: 10px 14px;
+      border-radius: 12px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      transition: transform .06s ease, background .2s ease, border-color .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: color-mix(in hsl, var(--line), var(--ink) 30%);
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+      margin-top: 18px;
+      grid-template-columns: 2.2fr 1.1fr;
+    }
+
+    @media (max-width: 860px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 20px 22px;
+    }
+
+    .section-title {
+      font-weight: 800;
+      letter-spacing: .3px;
+      font-size: 15px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 10px;
+    }
+
+    .subhead {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .row {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .contact a {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px dashed transparent;
+    }
+
+    .contact a:hover {
+      border-bottom-color: var(--accent-2);
+    }
+
+    .xp-item+.xp-item {
+      border-top: 1px dashed var(--line);
+      margin-top: 14px;
+      padding-top: 14px;
+    }
+
+    .xp-title {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-weight: 700;
+    }
+
+    .xp-title .when {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .bullets {
+      margin: 8px 0 0 0;
+      padding-left: 18px;
+    }
+
+    .bullets li {
+      margin: 6px 0;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--chip);
+      color: var(--ink);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      margin: 6px 6px 0 0;
+    }
+
+    .two-col {
+      columns: 2;
+      column-gap: 12px;
+    }
+
+    @media (max-width: 620px) {
+      .two-col {
+        columns: 1;
+      }
+    }
+
+    .lang-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+    }
+
+    .lang-grid .chip {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .footer-note {
+      text-align: center;
+      color: var(--muted);
+      margin-top: 16px;
+      font-size: 13px;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .page {
+        margin: 0;
+        padding: 0;
+      }
+
+      .header {
+        background: #fff;
+        border: none;
+      }
+
+      .btn,
+      .footer-note {
+        display: none !important;
+      }
+
+      .card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* Simple inline icon style */
+    .ico {
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      vertical-align: -3px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header class="header">
+      <div>
+        <div class="name">Md Sahil Raza</div>
+        <div class="role">Bachelor of Computer Application Graduate — Full‑Stack Developer (Entry-Level)</div>
+        <div class="contact row" style="margin-top:10px">
+          <span>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16v16H4z" opacity=".2" />
+              <path d="M22 6l-10 7L2 6" />
+            </svg>
+            <a href="mailto:02mdsahil1461@gmail.com">02mdsahil1461@gmail.com</a>
+          </span>
+          <span>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M22 16.92V19a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 3 4.18 2 2 0 0 1 5 2h2.09a2 2 0 0 1 2 1.72c.12.9.33 1.77.63 2.6a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.48-1.18a2 2 0 0 1 2.11-.45c.83.3 1.7.51 2.6.63A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <a href="tel:+919693338076">+91 96933 38076</a>
+          </span>
+          <span>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20" />
+            </svg>
+            Ramgarh, India
+          </span>
+          <span>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M22 4.01c-.77.35-1.6.59-2.47.69A4.16 4.16 0 0 0 21.4 3a8.3 8.3 0 0 1-2.63 1 4.14 4.14 0 0 0-7.07 3.77A11.77 11.77 0 0 1 3 4.67a4.13 4.13 0 0 0 1.28 5.52 4.06 4.06 0 0 1-1.87-.52v.05a4.13 4.13 0 0 0 3.32 4.05c-.45.12-.93.18-1.42.07a4.15 4.15 0 0 0 3.86 2.87A8.3 8.3 0 0 1 2 19.54 11.74 11.74 0 0 0 8.29 21c7.55 0 11.68-6.26 11.68-11.68 0-.18 0-.36-.01-.54A8.3 8.3 0 0 0 22 4.01z" />
+            </svg>
+            <a href="https://twitter.com/md_raza1461" target="_blank" rel="noopener">@md_raza1461</a>
+          </span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn" id="themeBtn" title="Toggle light/dark">🌗 Theme</button>
+        <button class="btn" onclick="window.print()" title="Print / Save as PDF">🖨️ Print / PDF</button>
+      </div>
+    </header>
+
+    <main class="grid">
+      <!-- Left / Main column -->
+      <section class="card">
+        <h2 class="section-title">Professional Summary</h2>
+        <p>Dedicated and motivated BCA graduate seeking an opportunity to contribute technical skills and strong work
+          ethic to a high‑performing engineering team. Hands‑on experience across full‑stack development and data‑driven
+          problem solving; eager to learn, collaborate, and ship user‑focused features.</p>
+      </section>
+
+      <!-- Right / Skills quick view -->
+      <aside class="card">
+        <h2 class="section-title">Core Skills</h2>
+        <div>
+          <span class="chip">C</span>
+          <span class="chip">C++</span>
+          <span class="chip">Java</span>
+          <span class="chip">Python</span>
+          <span class="chip">Full‑Stack (PHP · JS · SQL)</span>
+          <span class="chip">Interpersonal Communication</span>
+          <span class="chip">Team Building</span>
+          <span class="chip">Multilingual</span>
+        </div>
+      </aside>
+
+      <section class="card">
+        <h2 class="section-title">Experience</h2>
+        <div class="xp-item">
+          <div class="xp-title"><span>Intern — Techies Gateway</span><span class="when">06/2024 – 08/2024</span></div>
+          <div class="subhead">Full‑Stack Development</div>
+          <ul class="bullets">
+            <li>Contributed to a CRUD web app using PHP, JavaScript, and MySQL; built RESTful endpoints and input
+              validation utilities.</li>
+            <li>Implemented reusable UI components and improved form performance, trimming average interaction time by
+              ~20%.</li>
+            <li>Collaborated with a small team in Agile sprints; wrote clear documentation for handover.</li>
+          </ul>
+        </div>
+      </section>
+
+      <aside class="card">
+        <h2 class="section-title">Projects</h2>
+        <div class="xp-item">
+          <div class="xp-title"><span>Apartment Entry Book System</span><span class="when">05/2022 – 08/2022</span>
+          </div>
+          <div class="subhead">SQL · PHP · JavaScript</div>
+          <ul class="bullets">
+            <li>Designed a system to record, search, and export entry logs for apartment visitors with role‑based access
+              control.</li>
+          </ul>
+        </div>
+        <div class="xp-item">
+          <div class="xp-title"><span>Online Tutor Finder Website</span><span class="when">06/2024 – 09/2024</span>
+          </div>
+          <div class="subhead">Full‑Stack Web</div>
+          <ul class="bullets">
+            <li>Built a platform to connect learners to registered teachers; implemented profile listings and simple
+              matching flows.</li>
+          </ul>
+        </div>
+      </aside>
+
+      <section class="card">
+        <h2 class="section-title">Education</h2>
+        <div class="xp-item">
+          <div class="xp-title"><span>Bachelor of Computer Application (BCA) — Karim City College,
+              Jamshedpur</span><span class="when">07/2019 – 08/2022</span></div>
+          <ul class="bullets">
+            <li><strong>Score:</strong> 87.7%</li>
+          </ul>
+        </div>
+        <div class="xp-item">
+          <div class="xp-title"><span>Post Graduate — RVS College of Engineering & Technology, Jamshedpur</span><span
+              class="when">10/2022 – 2024</span></div>
+        </div>
+      </section>
+
+      <aside class="card">
+        <h2 class="section-title">Certificates</h2>
+        <ul class="bullets">
+          <li>Willmark International — Artificial Intelligence Course (Internship), 06/2023 – 07/2023</li>
+          <li>Full Stack Development (Techies Gateway), 06/2024 – 09/2024</li>
+          <li>College Sports Meet — Cricket Championship, 12/2022</li>
+        </ul>
+      </aside>
+
+      <section class="card">
+        <h2 class="section-title">Languages</h2>
+        <div class="lang-grid">
+          <span class="chip">Hindi <span class="subhead">Native/Bilingual</span></span>
+          <span class="chip">English <span class="subhead">Native/Bilingual</span></span>
+          <span class="chip">Bengali <span class="subhead">Professional</span></span>
+          <span class="chip">Assamese <span class="subhead">Limited</span></span>
+          <span class="chip">Urdu <span class="subhead">Full Professional</span></span>
+          <span class="chip">Bhojpuri <span class="subhead">Elementary</span></span>
+        </div>
+      </section>
+
+      <aside class="card">
+        <h2 class="section-title">Interests</h2>
+        <p class="two-col">Cricket · Volleyball · Painting · Reading · Video Games · Chess</p>
+      </aside>
+    </main>
+
+    <p class="footer-note">Tip: Click “Print / PDF” to export this resume. You can edit the HTML directly to update your
+      details.</p>
+  </div>
+
+  <script>
+    const themeBtn = document.getElementById('themeBtn');
+    let manual = false;
+    themeBtn.addEventListener('click', () => {
+      manual = true;
+      const isDark = document.documentElement.dataset.theme !== 'light';
+      document.documentElement.dataset.theme = isDark ? 'light' : 'dark';
+      if (isDark) {
+        document.documentElement.style.setProperty('--bg', '#f7f8fb');
+        document.documentElement.style.setProperty('--panel', '#ffffff');
+        document.documentElement.style.setProperty('--ink', '#0f172a');
+        document.documentElement.style.setProperty('--muted', '#4b5563');
+        document.documentElement.style.setProperty('--line', '#e5e7eb');
+        document.documentElement.style.setProperty('--chip', '#f2f4f8');
+      } else {
+        document.documentElement.style.setProperty('--bg', '#0b1020');
+        document.documentElement.style.setProperty('--panel', '#11162a');
+        document.documentElement.style.setProperty('--ink', '#e5e7eb');
+        document.documentElement.style.setProperty('--muted', '#9aa4b2');
+        document.documentElement.style.setProperty('--line', '#20263c');
+        document.documentElement.style.setProperty('--chip', '#1a223d');
+      }
+    });
+
+    // Respect user prefers-color-scheme on load
+    const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    if (prefersLight && !manual) {
+      themeBtn.click();
+    }
+  </script>
+</body>
+
+</html>
