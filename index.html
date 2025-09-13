@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Main Container of the resume  -->
+    <div class="mainContainer">
+        <!-- navigation bar inside main container -->
+        <div class="navBar">
+
+            <div class="closeButton">
+                <svg width="32" height="32" viewBox="0 0 72 72" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <g id="close">
+                        <path id="Icon" d="M18 18L54 54M54 18L18 54" stroke="black" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
+                </svg>
+            </div>
+            <!-- title/logo -->
+            <span class="title">Sahil.dev</span>
+            <!-- navigation menu -->
+            <div class="navigationList">
+                <li class="navigationListItem"><a href="home" >Home</a></li>
+                <li class="navigationListItem"><a href="about" >About</a></li>
+                <li class="navigationListItem"><a href="projects" >Projects</a></li>
+                <li class="navigationListItem"><a href="contacts" >Contacts</a></li>
+            </div>
+
+        </div>
+        <!--  navigation bar when @media 450px-->
+        <div class="navBar-450px">
+            <!-- title/logo -->
+            <span class="title-450px">Sahil.dev</span>
+
+            <!-- hamburger -->
+            <div class="hamburger"><svg class="hamburgerSvg" width="32" height="32" viewBox="0 0 72 72" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <g id="menu">
+                        <path id="Icon" d="M12 21H60M12 36H60M12 51H60" stroke="black" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <!-- Home section of the main container  -->
+        <div class="home ">
+            <!-- profile section inside home section -->
+            <div class="profile ">
+                <!-- profile details -->
+                <div class="profileDetails-Picture ">
+                    <div class="profileDetails">
+                        <h1 class="name">Md Sahil Raza | Web Developer</h1>
+                        <p class="profileDetailInfo">Enthusiastic and dedicated web developer with a strong
+                            foundation
+                            in
+                            front-end and back-end technologies. Proficient in HTML, CSS, JavaScript, and frameworks
+                            like
+                            Node.js.Experienced in building responsive and user-friendly web applications. </p>
+
+                        <!-- professional links -->
+                        <div class="professionalLink">
+                            <ul>
+                                <li><a href=""><img src="/img/git.svg" alt="" class="invert"></a></li>
+                                <li><a href=""><img src="/img/internsala.webp" alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- profile picture -->
+                    <div class="profilePicture">
+                        <div class="image"><img src="img/profile.jpg" alt=""></div>
+                    </div>
+
+                </div>
+
+                <!-- tech stack -->
+                <div class="techStack ">
+                    <span>Tech Stack |</span>
+                    <ul>
+                        <li><img src="/img/html.svg" alt=""></li>
+                        <li><img src="/img/css.svg" alt=""></li>
+                        <li><img src="/img/javascript.svg" alt=""></li>
+                        <li><img src="/img/nodejs.svg" alt=""></li>
+                        <li><img src="/img/c.svg" alt=""></li>
+                        <li><img src="/img/c ++.svg" alt=""></li>
+                        <li><img src="/img/tailwind.svg" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- about me  section of the main container -->
+        <div class="about ">
+            <div class="aboutImage">
+                <img src="/img/laptopOnDesk.jpg" alt="">
+            </div>
+            <div class="main-content">
+
+                <div class="bottom-section">
+                    <ul class="tab-menu" id="aboutNav">
+                        <li class="active" data-section="professionalSummary">Summary</li>
+                        <li data-section="education">Education</li>
+                        <li data-section="certification">Certifications</li>
+                        <li data-section="languages">Languages</li>
+                        <li data-section="intrests">intrests</li>
+                    </ul>
+
+                    <div class="about" id="aboutContent">
+                        <!-- Content will be dynamically loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- projects section of the main container  -->
+        <div class="projects ">
+            <!-- project1 -->
+            <div class="projectContent ">
+                <div class="projectImage" id="project1">
+                    <img src="" alt="">
+                    <div class="buttons">
+                        <button class="left">
+                            <svg width="20" height="20" viewBox="0 0 72 72" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g id="arrow-back-simple">
+                                    <path id="Icon" d="M45 60L21 36L45 12" stroke="black" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </g>
+                            </svg>
+
+                        </button>
+                        <button class="right">
+                            <svg width="20" height="20" viewBox="0 0 72 72" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g id="arrow-forward-simple">
+                                    <path id="Icon" d="M27 60L51 36L27 12" stroke="black" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </g>
+                            </svg>
+
+                        </button>
+                    </div>
+                </div>
+                <div class="projectDetails">
+                    <h3>Calculator &#x1F9EE;</h3>
+                    <p>1.Created a responsive and interactive calculator application, implementing core logic for
+                        arithmetic
+                        operations, including addition, subtraction, multiplication, and division.
+                        <br>
+                        <br>
+                        2.Key skills demonstrated: User interface design, DOM manipulation, event handling, and a
+                        clear
+                        understanding of application state management.
+                    </p>
+                    <div class="projectButtons">
+                        <div class="button"><a
+                                href="https://calculator-gy4dgbjic-md-sahil-razas-projects.vercel.app/calculator.html">Open
+                                Demo</a></div>
+                        <button class="button"><a href="https://github.com/md-sahil-byte/calculator">See Code-<img
+                                    src="/img/git.svg" alt="" class="invert"></a> </button>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- project2 -->
+            <div class="projectContent ">
+                <div class="projectDetails">
+                    <h3>Tutor-Finder Web &#x1F9D1;</h3>
+                    <p>1.Built a full-stack Tutor Marketplace with - Html , CSS , Js , MySql(For database).
+                        <br>
+                        <br>
+                        2.The application allows for student/parents to search for tutors according to their need
+                        and
+                        connect with them . Provides convineance from sitting at their home they can solve one of
+                        their
+                        major worries "Good Tutor".
+                    </p>
+                    <div class="projectButtons">
+                        <div class="button" style="display: none;"><a
+                                href="https://calculator-gy4dgbjic-md-sahil-razas-projects.vercel.app/calculator.html">Open
+                                Demo</a></div>
+                        <button class="button"><a href="https://github.com/md-sahil-byte/tutorFinder">See Code-<img
+                                    src="/img/git.svg" alt="" class="invert"></a> </button>
+
+                    </div>
+                </div>
+                <div class="projectImage" id="project2">
+                    <img src="" alt="">
+                    <div class="buttons">
+                        <button class="left">
+                            <svg width="20" height="20" viewBox="0 0 72 72" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g id="arrow-back-simple">
+                                    <path id="Icon" d="M45 60L21 36L45 12" stroke="black" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </g>
+                            </svg>
+
+                        </button>
+                        <button class="right">
+                            <svg width="20" height="20" viewBox="0 0 72 72" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g id="arrow-forward-simple">
+                                    <path id="Icon" d="M27 60L51 36L27 12" stroke="black" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </g>
+                            </svg>
+
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- project3 -->
+            <div class="projectContent ">
+                <div class="projectImage" id="project3">
+                    <img src="" alt="">
+                    <div class="buttons" style="display: none;">
+                        <button class="left">
+                            <svg width="20" height="20" viewBox="0 0 72 72" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g id="arrow-back-simple">
+                                    <path id="Icon" d="M45 60L21 36L45 12" stroke="black" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </g>
+                            </svg>
+
+                        </button>
+                        <button class="right">
+                            <svg width="20" height="20" viewBox="0 0 72 72" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g id="arrow-forward-simple">
+                                    <path id="Icon" d="M27 60L51 36L27 12" stroke="black" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </g>
+                            </svg>
+
+                        </button>
+                    </div>
+                </div>
+
+                <div class="projectDetails">
+                    <h3>Rhytmix-Music Player </h3>
+                    <p>1.Builtbuilt an online Music Player application using - Html , CSS , Js .
+                        <br>
+                        <br>
+                        2.The application allows for user to tap on their favourite available and,enjog the songs to
+                        their hearts content.
+                    </p>
+                    <div class="projectButtons">
+                        <div class="button" style="display: none;"><a
+                                href="https://calculator-gy4dgbjic-md-sahil-razas-projects.vercel.app/calculator.html">Open
+                                Demo</a></div>
+                        <button class="button"><a href="https://github.com/md-sahil-byte/tutorFinder">See Code-<img
+                                    src="/img/git.svg" alt="" class="invert"></a> </button>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- contacts  -->
+        <div class="contacts">
+
+            <ul>
+                <li class="contactsListItem1">
+                    <img width="20px" height="22px" src="img/location.svg" alt="loc" class="invert">
+                    <p id="copyTextClass1">Jamshedpur,Jharkhand,India</p>
+                    <button class=" copy1">
+                        Copy
+                    </button>
+                </li>
+                <li class="contactsListItem2">
+                    <button class=" copy2">
+                        Copy
+                    </button>
+                    <img src="img/call.svg" alt="" class="invert">
+                    <p id="copyTextClass2">9693338076</p>
+                </li>
+                <li class="contactsListItem3">
+                    <button class=" copy3">
+                        Copy
+                    </button>
+                    <img src="img/mail.svg" alt="" class="invert">
+                    <p id="copyTextClass3">02mdsahil1461@gmail.com</p>
+                </li>
+                <li> <a href="#" class="contactItems"><img src="img/internsala.webp" alt="">MD SAHIL RAZA</a>
+                </li>
+
+            </ul>
+            <!-- <button class="copy">
+                Copy
+            </button> -->
+
+        </div>
+
+    </div>
+    <div class="toTheTop">
+        <a href="#">
+            <svg width="25" height="25" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="arrow-up-long">
+                    <path id="Icon" d="M36 63L36 9M36 9L21 24M36 9L51 24" stroke="black" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+            </svg>
+        </a>
+    </div>
+    <!-- script addition -->
+    <script src="script.js"></script>
+</body>
+
+</html>
